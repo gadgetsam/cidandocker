@@ -17,10 +17,10 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 USER root
 
 RUN	apt-get install htop 
-RUN apt-get install -yparallel
+RUN apt-get install -y parallel
 
 # 3) install packages
-RUN pip install --no-cache-dir CIDAN
+RUN pip install --no-cache-dir pybind11 CIDAN
 
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
